@@ -1,0 +1,41 @@
+{
+    "name": "report_periplia",
+    "version": "1.0.0",
+    "description": "client search",
+    "main": "src/index.js",
+    "files": [
+        "/src"
+    ],
+    "scripts": {
+        "test": "jest",
+        "test:coverage": "jest --coverage",
+        "prebuild": "rm -rf dist",
+        "audit": "npm audit",
+        "lint:fix": "eslint --fix .",
+        "lint": "eslint .",
+        "prettier:list": "prettier --list-different \"./{test,src}/**/*.js\" || ECHO .",
+        "prettier:write": "prettier --write  \"./{test,src}/**/*.js\"",
+        "prettier": "prettier --check  \"./{test,src}/**/*.js\"",
+        "build": "repack-zip",
+        "postbuild": "mkdir dist; mv report_periplia.zip dist/"
+    },
+    "dependencies": {
+        "mysql": "^2.18.1",
+        "mysql2": "^2.3.3"
+    },
+    "devDependencies": {
+        "aws-sdk": "^2.478.0",
+        "aws-sdk-mock": "^5.0.0",
+        "eslint": "^5.16.0",
+        "eslint-config-google": "^0.13.0",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.17.3",
+        "eslint-plugin-prettier": "^3.1.0",
+        "jest": "^24.1.0",
+        "jshint": "^2.10.2",
+        "prettier": "^1.18.2",
+        "prettier-eslint": "^9.0.0",
+        "prettier-eslint-cli": "^5.0.0",
+        "repack-zip": "^0.2.5"
+    }
+}
